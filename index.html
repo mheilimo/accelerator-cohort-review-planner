@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="A free browser-only planner for consistent accelerator cohort reviews at intake, mid-programme and before demo day."
+    />
+    <title>Accelerator Cohort Review Cadence Planner</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <header class="hero">
+        <p class="eyebrow">Free programme operations worksheet</p>
+        <h1>Accelerator Cohort Review Cadence Planner</h1>
+        <p class="lede">
+          Turn a mixed startup cohort into three documented review moments:
+          intake baseline, mid-programme mentor focus and pre-demo-day recheck.
+        </p>
+        <div class="privacy-note">
+          Browser-only: nothing entered here is uploaded or stored on a server.
+        </div>
+      </header>
+
+      <section class="panel setup" aria-labelledby="setup-title">
+        <div>
+          <p class="section-label">1 · Programme setup</p>
+          <h2 id="setup-title">Set the review rhythm</h2>
+        </div>
+        <div class="setup-grid">
+          <label>
+            Cohort or programme
+            <input id="cohort-name" type="text" placeholder="e.g. Autumn climate cohort" />
+          </label>
+          <label>
+            Kickoff date
+            <input id="kickoff-date" type="date" />
+          </label>
+          <label>
+            Programme length
+            <select id="programme-weeks">
+              <option value="8">8 weeks</option>
+              <option value="10">10 weeks</option>
+              <option value="12" selected>12 weeks</option>
+              <option value="16">16 weeks</option>
+              <option value="24">24 weeks</option>
+            </select>
+          </label>
+        </div>
+        <div class="stage-cards" id="stage-cards" aria-live="polite"></div>
+      </section>
+
+      <section class="panel" aria-labelledby="focus-title">
+        <div class="section-heading">
+          <div>
+            <p class="section-label">2 · Shared review language</p>
+            <h2 id="focus-title">Assign mentor focus across 12 dimensions</h2>
+          </div>
+          <button class="secondary" id="load-example" type="button">
+            Load fictional example
+          </button>
+        </div>
+        <p class="supporting">
+          Choose the checkpoint where each topic deserves structured attention,
+          then name an owner and the evidence or change to inspect. Leave routine
+          topics unassigned.
+        </p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Dimension</th>
+                <th scope="col">Review checkpoint</th>
+                <th scope="col">Mentor / owner</th>
+                <th scope="col">Evidence or change to inspect</th>
+              </tr>
+            </thead>
+            <tbody id="dimension-rows"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="panel output" aria-labelledby="agenda-title">
+        <div class="section-heading">
+          <div>
+            <p class="section-label">3 · Working agenda</p>
+            <h2 id="agenda-title">Cohort review plan</h2>
+          </div>
+          <div class="button-row">
+            <button class="secondary" id="clear" type="button">Clear</button>
+            <button class="secondary" id="copy-agenda" type="button">Copy agenda</button>
+            <button class="primary" id="download-csv" type="button">Download CSV</button>
+          </div>
+        </div>
+        <div class="summary-grid" id="summary-grid"></div>
+        <div class="agenda" id="agenda"></div>
+        <p class="status" id="status-message" aria-live="polite"></p>
+      </section>
+
+      <section class="context" aria-labelledby="context-title">
+        <div>
+          <p class="section-label">Why these dimensions?</p>
+          <h2 id="context-title">A shared language, not an automated decision</h2>
+          <p>
+            The 12 dimensions mirror DDScore’s structured private-company review
+            framework. DDScore analyses submitted materials, checks claims against
+            current public information and surfaces strengths, risks, missing
+            evidence and next questions. It supports mentors and programme teams;
+            it does not select companies, verify every answer or replace human
+            judgement.
+          </p>
+        </div>
+        <a
+          class="context-link"
+          href="https://www.ddscore.ai/for-evaluator/?utm_source=github-pages&amp;utm_medium=referral&amp;utm_campaign=ddscore-30d-jul-2026&amp;utm_content=accelerator-cohort-review-planner-a"
+        >
+          Explore DDScore for evaluators →
+        </a>
+      </section>
+
+      <footer>
+        <p>
+          Use synthetic or non-confidential examples in shared workshops. This
+          worksheet is not investment, legal or funding advice.
+        </p>
+      </footer>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
